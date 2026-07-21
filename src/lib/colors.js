@@ -1,9 +1,34 @@
 export const initialColors = [
-  { id: "c1", role: "primary main", hex: "#ff4a11", contrastText: "#FFFFFF" }, // Vibrant orange
-  { id: "c2", role: "primary dark", hex: "#c73e0b", contrastText: "#FFFFFF" }, // Darker shade of orange
-  { id: "c3", role: "primary light", hex: "#ff7a3e", contrastText: "#000000" }, // Lighter shade of orange
-  { id: "c4", role: "secondary main", hex: "#5C6BC0", contrastText: "#FFFFFF" }, // Indigo Blue
-  { id: "c5", role: "secondary dark", hex: "#3949AB", contrastText: "#FFFFFF" }, // Darker indigo blue
+  {
+    id: "c1",
+    role: "primary main",
+    hex: "#ff4a11",
+    contrastText: "#FFFFFF",
+  }, // Vibrant orange
+  {
+    id: "c2",
+    role: "primary dark",
+    hex: "#c73e0b",
+    contrastText: "#FFFFFF",
+  }, // Darker shade of orange
+  {
+    id: "c3",
+    role: "primary light",
+    hex: "#ff7a3e",
+    contrastText: "#000000",
+  }, // Lighter shade of orange
+  {
+    id: "c4",
+    role: "secondary main",
+    hex: "#5C6BC0",
+    contrastText: "#FFFFFF",
+  }, // Indigo Blue
+  {
+    id: "c5",
+    role: "secondary dark",
+    hex: "#3949AB",
+    contrastText: "#FFFFFF",
+  }, // Darker indigo blue
   {
     id: "c6",
     role: "secondary light",
