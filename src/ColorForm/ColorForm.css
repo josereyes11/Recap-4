@@ -1,0 +1,32 @@
+.color-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: max-content;
+  gap: 10px;
+  padding: 24px;
+  border-radius: 16px;
+  border: 3px solid #000000;
+  overflow: hidden;
+}
+
+.color-form__fields {
+  display: flex;
+  flex-direction: column;
+}
+
+.color-form__field {
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+}
+
+.color-form__button-container {
+}
+
+.color-form__button-add {
+  border-radius: 8px;
+  border: 3px solid #000000;
+  overflow: hidden;
+  background-color: floralwhite;
+}
