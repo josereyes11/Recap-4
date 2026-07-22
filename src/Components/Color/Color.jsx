@@ -21,7 +21,13 @@ export default function Color({ color, handleDeleteColor, handleEditColor }) {
           <button onClick={() => setIsConfirming(true)}>DELETE</button>
         )}
         {isEditing ? (
-          <ColorForm initialData={color} onAdd={(data) => handleEditColor(color.id, data)} />
+          <ColorForm
+            initialData={color}
+            onAdd={(data) => {
+              handleEditColor(color.id, data);
+              setIsEditing(false);
+            }}
+          />
         ) : (
           <button onClick={() => setIsEditing(true)}>EDIT</button>
         )}
