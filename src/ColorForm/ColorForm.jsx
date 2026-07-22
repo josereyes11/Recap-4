@@ -18,11 +18,11 @@ export default function ColorForm({ onAdd }) {
           </div>
           <div className="color-form__field">
             <label htmlFor="hex">HEX</label>
-            <ColorInput id="hex" />
+            <ColorInput id="hex" name="hex" />
           </div>
           <div className="color-form__field">
             <label htmlFor="contrastText">Contrast Text</label>
-            <ColorInput id="contrastText" />
+            <ColorInput id="contrastText" name="contrastText" />
           </div>
           <div className="color-form__button-container">
             <button class="color-form__button-add" buttontype="submit">
