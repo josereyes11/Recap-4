@@ -17,7 +17,7 @@ export const initialColors = [
     hex: "#ff7a3e",
     contrastText: "#000000",
   }, // Lighter shade of orange
-  /*  {
+  {
     id: "c4",
     role: "secondary main",
     hex: "#5C6BC0",
@@ -52,5 +52,5 @@ export const initialColors = [
     role: "background light",
     hex: "#43464b",
     contrastText: "#FFFFFF",
-  }, // Lighter charcoal */
+  }, // Lighter charcoal
 ];
