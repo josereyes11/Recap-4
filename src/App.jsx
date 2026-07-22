@@ -12,13 +12,23 @@ function App() {
     setThemeColors((prevColors) => [themeColor, ...prevColors]);
   }
 
+  function handleDeleteColor(id) {
+    setThemeColors((prevColors) => prevColors.filter((color) => color.id !== id));
+  }
+
   return (
     <>
       <h1>Theme Creator</h1>
       <ColorForm onAdd={handleAddColor} />
       <div>
         {themeColors.map((themeColor) => {
-          return <Color key={themeColor.id} color={themeColor}></Color>;
+          return (
+            <Color
+              key={themeColor.id}
+              color={themeColor}
+              handleDeleteColor={handleDeleteColor}
+            ></Color>
+          );
         })}
       </div>
     </>
