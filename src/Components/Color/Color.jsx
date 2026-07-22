@@ -10,11 +10,11 @@ export default function Color({ color, handleDeleteColor }) {
         <p>{color.role}</p>
         <p>{color.contrastText}</p>
         {isConfirming ? (
-          <p>
-            Ar you sure?
+          <div>
+            <p className="color-card-question">Are you sure?</p>
             <button onClick={() => handleDeleteColor(color.id)}>Yes</button>
             <button onClick={() => setIsConfirming(false)}>Cancel</button>
-          </p>
+          </div>
         ) : (
           <button onClick={() => setIsConfirming(true)}>DELETE</button>
         )}
