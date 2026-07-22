@@ -1,8 +1,10 @@
 import "./Color.css";
 import { useState } from "react";
+import ColorForm from "../../ColorForm/ColorForm";
 
-export default function Color({ color, handleDeleteColor }) {
+export default function Color({ color, handleDeleteColor, handleEditColor }) {
   const [isConfirming, setIsConfirming] = useState();
+  const [isEditing, setIsEditing] = useState();
   return (
     <>
       <div className="color-card" style={{ color: color.contrastText, backgroundColor: color.hex }}>
@@ -17,6 +19,11 @@ export default function Color({ color, handleDeleteColor }) {
           </div>
         ) : (
           <button onClick={() => setIsConfirming(true)}>DELETE</button>
+        )}
+        {isEditing ? (
+          <ColorForm initialData={color} onAdd={(data) => handleEditColor(color.id, data)} />
+        ) : (
+          <button onClick={() => setIsEditing(true)}>EDIT</button>
         )}
       </div>
     </>
