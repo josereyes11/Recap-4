@@ -5,10 +5,11 @@
   width: max-content;
   gap: 10px;
   padding: 24px;
-  border-radius: 16px;
-  border: 3px solid #000000;
+  border-radius: 24px;
+  border: 1px solid #d6d6d6;
   overflow: hidden;
-  height: auto;
+  height: max-content;
+  background-color: #f5f5f5;
 }
 
 .color-form__field {

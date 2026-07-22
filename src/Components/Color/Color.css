@@ -1,18 +1,30 @@
 .color-card {
+  height: 300px;
+  width: 200px;
   margin: 0px 10px;
   padding: 16px;
   display: flex;
   flex-direction: column;
   font-size: small;
-  height: auto;
+  border-radius: 24px;
 }
 
 .color-card-headline {
   display: inline;
   padding: 2px 8px;
-  background: black;
+  background: rgb(0, 0, 0);
   color: white;
   width: max-content;
   border-radius: 8px;
+  font-weight: bold;
+}
+
+.color-card-question {
+  display: inline;
+  padding: 2px 8px;
+  background: rgb(0, 0, 0);
+  color: white;
+  width: max-content;
+  border-radius: 4px;
   font-weight: bold;
 }
