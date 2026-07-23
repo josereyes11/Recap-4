@@ -1,13 +1,15 @@
 import { initialColors } from "./lib/colors";
 import Color from "./Components/Color/Color";
 import "./App.css";
-import { useState } from "react";
 import ColorForm from "./ColorForm/ColorForm.jsx";
 import ColorInput from "./ColorInput/ColorInput.jsx";
 import { nanoid } from "nanoid";
+import useLocalStorageState from "use-local-storage-state";
 
 function App() {
-  const [themeColors, setThemeColors] = useState(initialColors);
+  const [themeColors, setThemeColors] = useLocalStorageState("themeColorsKey", {
+    defaultValue: initialColors,
+  });
 
   function handleAddColor(themeColor) {
     const newColor = { ...themeColor, id: nanoid() };
