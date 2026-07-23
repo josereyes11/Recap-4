@@ -21,13 +21,21 @@ export default function Color({ color, handleDeleteColor, handleEditColor }) {
           <button onClick={() => setIsConfirming(true)}>DELETE</button>
         )}
         {isEditing ? (
-          <ColorForm
-            initialData={color}
-            onAdd={(data) => {
-              handleEditColor(color.id, data);
-              setIsEditing(false);
-            }}
-          />
+          <div>
+            <div className="color-card-cancel-container">
+              <button className="color-card-cancel-button" onClick={() => setIsEditing(false)}>
+                Cancel
+              </button>
+            </div>
+            <ColorForm
+              buttonLabel="UPDATE COLOR"
+              initialData={color}
+              onAdd={(data) => {
+                handleEditColor(color.id, data);
+                setIsEditing(false);
+              }}
+            />
+          </div>
         ) : (
           <button onClick={() => setIsEditing(true)}>EDIT</button>
         )}

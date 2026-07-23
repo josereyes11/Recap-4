@@ -4,6 +4,7 @@ import "./ColorForm.css";
 export default function ColorForm({
   onAdd,
   initialData = { role: "", hex: "#000000", contrastText: "#ffffff" },
+  buttonLabel = "ADD COLOR",
 }) {
   const onSubmit = (event) => {
     event.preventDefault();
@@ -45,7 +46,7 @@ export default function ColorForm({
           </div>
           <div className="color-form__button-container">
             <button className="color-form__button-add" type="submit">
-              ADD COLOR
+              {buttonLabel}
             </button>
           </div>
         </div>

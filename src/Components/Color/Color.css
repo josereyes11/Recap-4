@@ -28,3 +28,21 @@
   border-radius: 4px;
   font-weight: bold;
 }
+
+.color-card-cancel-container {
+  margin: 16px 16px;
+  width: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.color-card-cancel-button {
+  box-sizing: border-box;
+  border-radius: 8px;
+  border: 2px solid #000000;
+  overflow: hidden;
+  background-color: f2f2f2;
+  width: 100px;
+  cursor: pointer;
+  padding: 10px 16px;
+}
