@@ -49,6 +49,7 @@ body {
   .color-cards-container {
     grid-template-columns: 1fr;
     justify-items: center;
+    width: 100%;
   }
   h1 {
     text-align: center;
