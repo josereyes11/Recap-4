@@ -1,14 +1,29 @@
 import { initialColors } from "./lib/colors";
-import Color from "./Components/Color/Color.jsx";
+import Color from "./Components/Color/Color";
 import "./App.css";
-import ColorForm from "./Components/ColorForm/ColorForm.jsx";
+import ColorForm from "./ColorForm/ColorForm.jsx";
 import { nanoid } from "nanoid";
 import useLocalStorageState from "use-local-storage-state";
+import { initialThemes } from "./lib/themes.js";
 
 function App() {
-  const [themeColors, setThemeColors] = useLocalStorageState("themeColorsKey", {
+  const [themeColors, setThemeColors] = useLocalStorageState("flatPool", {
     defaultValue: initialColors,
   });
+
+  const [themes, setThemes] = useLocalStorageState("themesKey", {
+    defaultValue: initialThemes,
+  });
+
+  const [currentThemeId, setCurrentThemeId] = useLocalStorageState("currentThemeIdKey", {
+    defaultValue: initialThemes[0].id,
+  });
+
+  const currentTheme = themes.find((theme) => theme.id === currentThemeId);
+
+  const currentThemeColors = currentTheme.colors.map((colorId) =>
+    themeColors.find((color) => color.id === colorId),
+  );
 
   function handleAddColor(themeColor) {
     const newColor = { ...themeColor, id: nanoid() };
@@ -30,9 +45,9 @@ function App() {
       <h1>Theme Creator</h1>
       <div className="app-layout">
         <ColorForm onAdd={handleAddColor} />
-        {themeColors.length ? (
+        {currentThemeColors.length ? (
           <div className="color-cards-container">
-            {themeColors.map((themeColor) => {
+            {currentThemeColors.map((themeColor) => {
               return (
                 <Color
                   key={themeColor.id}
