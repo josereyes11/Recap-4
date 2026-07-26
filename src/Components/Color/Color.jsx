@@ -37,7 +37,7 @@ export default function Color({ color, handleDeleteColor, handleEditColor }) {
           <p>{color.contrastText}</p>
         </div>
 
-        <div>
+        <div className="contrast-checker-container">
           <p style={{ fontSize: "14px" }}>
             Normal text:{" "}
             {dataRatio.AAA === "pass" ? "AAA ✓" : dataRatio.AA === "pass" ? "AA ✓" : "Fail ✗"}
