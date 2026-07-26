@@ -38,3 +38,14 @@ body {
   font-weight: bold;
   color: #b5b5b5;
 }
+
+@media (max-width: 600px) {
+  .app-layout {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .color-cards-container {
+    grid-template-columns: 1fr;
+  }
+}
