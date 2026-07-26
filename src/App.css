@@ -43,9 +43,14 @@ body {
   .app-layout {
     flex-direction: column;
     height: auto;
+    align-items: center;
   }
 
   .color-cards-container {
     grid-template-columns: 1fr;
+    justify-items: center;
+  }
+  h1 {
+    text-align: center;
   }
 }
