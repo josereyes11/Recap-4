@@ -1,8 +1,9 @@
 import "./Color.css";
 import { useState } from "react";
-import ColorForm from "../../ColorForm/ColorForm";
+import ColorForm from "../ColorForm/ColorForm";
 import deleteIcon from "../../assets/delete-icon.svg";
 import editIcon from "../../assets/edit-icon.svg";
+import CopyToClipboard from "../CopyToClipboard/ CopyToClipboard.jsx";
 
 export default function Color({ color, handleDeleteColor, handleEditColor }) {
   const [isConfirming, setIsConfirming] = useState();
@@ -11,6 +12,7 @@ export default function Color({ color, handleDeleteColor, handleEditColor }) {
     <>
       <div className="color-card" style={{ color: color.contrastText, backgroundColor: color.hex }}>
         <p className="color-card-headline">{color.hex}</p>
+        <CopyToClipboard hexColorCopied={color.hex} />
         <p>{color.role}</p>
         <p>{color.contrastText}</p>
         <div className="card-icon-buttons">
