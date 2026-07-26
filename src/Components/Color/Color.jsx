@@ -1,6 +1,6 @@
 import "./Color.css";
 import { useState } from "react";
-import ColorForm from "../ColorForm/ColorForm";
+import ColorForm from "../ColorForm/ColorForm.jsx";
 import deleteIcon from "../../assets/delete-icon.svg";
 import editIcon from "../../assets/edit-icon.svg";
 import CopyToClipboard from "../CopyToClipboard/CopyToClipboard.jsx";
