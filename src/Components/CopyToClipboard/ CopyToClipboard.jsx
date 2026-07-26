@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import copyIcon from "../../assets/copy-icon.svg";
+import "./CopyToClipboard.css";
 
 export default function CopyToClipboard({ hexColorCopied }) {
   const [isCopied, setIsCopied] = useState(false);
@@ -23,9 +24,11 @@ export default function CopyToClipboard({ hexColorCopied }) {
   }, [isCopied]);
 
   return (
-    <div className="copy-container">
+    <div>
       {isCopied ? (
-        <button onClick={() => setIsCopied(true)}>Copied!</button>
+        <button className="button-copied" onClick={() => setIsCopied(true)}>
+          Copied!
+        </button>
       ) : (
         <button className="icon-button" onClick={() => handleCopy()}>
           <img src={copyIcon} alt="Copy" />
@@ -34,14 +37,3 @@ export default function CopyToClipboard({ hexColorCopied }) {
     </div>
   );
 }
-
-/* <div className="copy-container">
-  {isCopied ? (
-    <button className="icon-button" onClick={() => setIsCopied(true)}>
-      <img src={copyIcon} alt="Copy" />
-    </button>
-  ) : (
-    <button onClick={() => handleCopy()}>Copied!</button>
-  )}
-</div>;
- */

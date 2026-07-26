@@ -3,7 +3,7 @@ import { useState } from "react";
 import ColorForm from "../ColorForm/ColorForm";
 import deleteIcon from "../../assets/delete-icon.svg";
 import editIcon from "../../assets/edit-icon.svg";
-import CopyToClipboard from "../CopyToClipboard/ CopyToClipboard.jsx";
+import CopyToClipboard from "../CopyToClipboard/CopyToClipboard.jsx";
 
 export default function Color({ color, handleDeleteColor, handleEditColor }) {
   const [isConfirming, setIsConfirming] = useState();
@@ -11,10 +11,14 @@ export default function Color({ color, handleDeleteColor, handleEditColor }) {
   return (
     <>
       <div className="color-card" style={{ color: color.contrastText, backgroundColor: color.hex }}>
-        <p className="color-card-headline">{color.hex}</p>
-        <CopyToClipboard hexColorCopied={color.hex} />
-        <p>{color.role}</p>
-        <p>{color.contrastText}</p>
+        <div className="hex-and-copy-container">
+          <p className="color-card-headline">{color.hex}</p>
+          <CopyToClipboard hexColorCopied={color.hex} />
+        </div>
+        <div className="role-and-hex-contrast">
+          <p>{color.role}</p>
+          <p>{color.contrastText}</p>
+        </div>
         <div className="card-icon-buttons">
           {isConfirming ? (
             <div className="color-card-question-container">
