@@ -2,12 +2,20 @@
   height: 300px;
   width: 200px;
   margin: 0px 10px;
-  padding: 16px;
+  padding: 8px;
   display: flex;
   flex-direction: column;
   font-size: small;
   border-radius: 24px;
   position: relative;
+}
+
+.hex-and-copy-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 0 0 0;
 }
 
 .color-card-headline {
@@ -16,11 +24,16 @@
   background: rgb(0, 0, 0);
   color: white;
   width: max-content;
-  border-radius: 12px;
+  border-radius: 16px 8px 8px 8px;
   font-weight: bold;
   font-size: x-large;
 }
 
+.role-and-hex-contrast {
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 0 16px;
+}
 .color-card-question-container {
   display: flex;
   flex-direction: column;
