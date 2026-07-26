@@ -1,13 +1,30 @@
 import "./Color.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ColorForm from "../ColorForm/ColorForm.jsx";
 import deleteIcon from "../../assets/delete-icon.svg";
 import editIcon from "../../assets/edit-icon.svg";
 import CopyToClipboard from "../CopyToClipboard/CopyToClipboard.jsx";
+import { fetchContrast } from "../../lib/contrast.js";
 
 export default function Color({ color, handleDeleteColor, handleEditColor }) {
   const [isConfirming, setIsConfirming] = useState();
   const [isEditing, setIsEditing] = useState();
+  const [dataRatio, setRatioData] = useState({
+    ratio: "",
+    AA: "",
+    AALarge: "",
+    AAA: "",
+    AAALarge: "",
+  });
+
+  useEffect(() => {
+    async function run() {
+      const data = await fetchContrast(color.contrastText, color.hex);
+      setRatioData(data);
+    }
+    run();
+  }, [color.hex, color.contrastText]);
+
   return (
     <>
       <div className="color-card" style={{ color: color.contrastText, backgroundColor: color.hex }}>
@@ -18,6 +35,21 @@ export default function Color({ color, handleDeleteColor, handleEditColor }) {
         <div className="role-and-hex-contrast">
           <p>{color.role}</p>
           <p>{color.contrastText}</p>
+        </div>
+
+        <div>
+          <p style={{ fontSize: "14px" }}>
+            Normal text:{" "}
+            {dataRatio.AAA === "pass" ? "AAA ✓" : dataRatio.AA === "pass" ? "AA ✓" : "Fail ✗"}
+          </p>
+          <p style={{ fontSize: "20px" }}>
+            Large text:{" "}
+            {dataRatio.AAALarge === "pass"
+              ? "AAA ✓"
+              : dataRatio.AALarge === "pass"
+                ? "AA ✓"
+                : "Fail ✗"}
+          </p>
         </div>
         <div className="card-icon-buttons">
           {isConfirming ? (
