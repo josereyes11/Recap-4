@@ -53,4 +53,10 @@ export const initialColors = [
     hex: "#43464b",
     contrastText: "#FFFFFF",
   }, // Lighter charcoal
+  {
+    id: "c10",
+    role: "first color 2nd theme",
+    hex: "#215fc2",
+    contrastText: "#FFFFFF",
+  },
 ];
