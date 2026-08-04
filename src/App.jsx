@@ -56,8 +56,10 @@ function App() {
   }
 
   function handleAddTheme(name) {
+    if (!name || !name.trim()) return;
     const newTheme = { id: nanoid(), name, colors: [] };
     setThemes((prevThemes) => [...prevThemes, newTheme]);
+    setCurrentThemeId(newTheme.id);
   }
 
   function handleRenameTheme(themeId, newName) {
@@ -79,7 +81,15 @@ function App() {
     <>
       <h1>Theme Creator</h1>
       <div className="app-layout">
-        <ColorForm onAdd={handleAddColor} />
+        <ColorForm
+          onAdd={handleAddColor}
+          themes={themes}
+          currentThemeId={currentThemeId}
+          handleSwitchTheme={handleSwitchTheme}
+          handleAddTheme={handleAddTheme}
+          handleRenameTheme={handleRenameTheme}
+          handleDeleteTheme={handleDeleteTheme}
+        />
         {currentThemeColors.length ? (
           <div className="color-cards-container">
             {currentThemeColors.map((themeColor) => {
