@@ -59,3 +59,15 @@
 .theme_selector {
   height: 32px;
 }
+
+.theme-edit-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.theme-add-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
