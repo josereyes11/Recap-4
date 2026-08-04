@@ -34,7 +34,6 @@ export default function Color({ color, handleDeleteColor, handleEditColor }) {
         </div>
         <div className="role-and-hex-contrast">
           <p>{color.role}</p>
-          <p>{color.contrastText}</p>
         </div>
 
         <div className="contrast-checker-container">
@@ -50,6 +49,7 @@ export default function Color({ color, handleDeleteColor, handleEditColor }) {
                 ? "AA ✓"
                 : "Fail ✗"}
           </p>
+          <p>{color.contrastText}</p>
         </div>
         <div className="card-icon-buttons">
           {isConfirming ? (
