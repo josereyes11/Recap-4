@@ -51,6 +51,30 @@ function App() {
     );
   }
 
+  function handleSwitchTheme(themeId) {
+    setCurrentThemeId(themeId);
+  }
+
+  function handleAddTheme(name) {
+    const newTheme = { id: nanoid(), name, colors: [] };
+    setThemes((prevThemes) => [...prevThemes, newTheme]);
+  }
+
+  function handleRenameTheme(themeId, newName) {
+    if (themeId === "t1") return;
+    setThemes((prevThemes) =>
+      prevThemes.map((theme) => (theme.id === themeId ? { ...theme, name: newName } : theme)),
+    );
+  }
+
+  function handleDeleteTheme(themeId) {
+    if (themeId === "t1") return;
+    setThemes((prevThemes) => prevThemes.filter((theme) => theme.id !== themeId));
+    if (currentThemeId === themeId) {
+      setCurrentThemeId("t1");
+    }
+  }
+
   return (
     <>
       <h1>Theme Creator</h1>
