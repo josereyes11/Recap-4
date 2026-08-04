@@ -38,3 +38,36 @@
   cursor: pointer;
   padding: 10px 16px;
 }
+
+.theme_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  gap: 10px;
+  overflow: hidden;
+  height: max-content;
+  background-color: #f5f5f5;
+  margin-bottom: 24px;
+}
+.theme_buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.theme_selector {
+  height: 32px;
+}
+
+.theme-edit-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.theme-add-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
