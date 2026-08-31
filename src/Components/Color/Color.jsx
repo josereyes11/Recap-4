@@ -5,6 +5,8 @@ import deleteIcon from "../../assets/delete-icon.svg";
 import editIcon from "../../assets/edit-icon.svg";
 import CopyToClipboard from "../CopyToClipboard/CopyToClipboard.jsx";
 import { fetchContrast } from "../../lib/contrast.js";
+import { useSortable } from "@dnd-kit/sortable";
+import { CSS } from "@dnd-kit/utilities";
 
 export default function Color({ color, handleDeleteColor, handleEditColor }) {
   const [isConfirming, setIsConfirming] = useState();
@@ -25,9 +27,20 @@ export default function Color({ color, handleDeleteColor, handleEditColor }) {
     run();
   }, [color.hex, color.contrastText]);
 
+  const { attributes, listeners, setNodeRef, transform, transition } = useSortable({
+    id: color.id,
+  });
+  const dragStyle = { transform: CSS.Transform.toString(transform), transition };
+
   return (
     <>
-      <div className="color-card" style={{ color: color.contrastText, backgroundColor: color.hex }}>
+      <div
+        ref={setNodeRef}
+        {...attributes}
+        {...listeners}
+        className="color-card"
+        style={{ ...dragStyle, color: color.contrastText, backgroundColor: color.hex }}
+      >
         <div className="hex-and-copy-container">
           <p className="color-card-headline">{color.hex}</p>
           <CopyToClipboard hexColorCopied={color.hex} />
